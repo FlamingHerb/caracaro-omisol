@@ -2,6 +2,7 @@
 const searchBar = document.querySelector("input");
 const images = document.getElementById("pokemonimages");
 const table = document.getElementById("poketable");
+const failmessage = document.getElementById("resultsnotfound");
 
 // Pokemon Table Elements
 const pokemonFrontImage = document.getElementById("pokemonfront");
@@ -45,12 +46,18 @@ async function getPokemonData(pokeName) {
         // JSON Obtained, proceed to change.
         console.log(json["name"]);
         setPokemonData(json);
+        images.hidden = false;
+        table.hidden = false;
+        failmessage.hidden = true;
     }
     
     // If not found, hide table.
     catch (error) {
         // If none, hide table.
         console.error(error.message);
+        images.hidden = true;
+        table.hidden = true;
+        failmessage.hidden = false;
 
     }
 }
@@ -91,7 +98,7 @@ function setPokemonData(json){
                 pokemonAbilitiesList.innerHTML += ", "
             }
         }
-        
+
         pokemonHP.innerHTML         = json.stats[0].base_stat;
         pokemonATK.innerHTML        = json.stats[1].base_stat;
         pokemonDEF.innerHTML        = json.stats[2].base_stat;
