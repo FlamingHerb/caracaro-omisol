@@ -97,7 +97,7 @@ function setPokemonData(json){
     // Set image and name.
     pokemonFrontImage.src       = json.sprites.front_default;
     pokemonBackImage.src        = json.sprites.back_default;
-    pokemonName.innerHTML       = sentenceCase(json.name);
+    pokemonName.innerHTML       = sentenceCase(json.name) + "<br/><small>#" + json.id + "</small>";
 
     // Iterate over types.
     for (let index = 0;  index < json.types.length; index++) {
