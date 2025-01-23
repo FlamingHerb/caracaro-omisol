@@ -85,7 +85,7 @@ def is_parenthesis_valid():
         if token in delimiters:
             stack.append(token)
             
-        # If its a closed delimiter. Equivalent to `elif token in delimiters.values():`
+        # If its a closed delimiter. 
         else:
             # Case: If we get a closed delimiter on an empty stack, immediate print False.
             if len(stack) == 0:
@@ -104,8 +104,3 @@ def is_parenthesis_valid():
         print("True")
     else:
         print("False")
-    
-
-
-if __name__ == "__main__":
-    is_parenthesis_valid()
