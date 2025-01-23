@@ -108,7 +108,7 @@ function setPokemonData(json){
 
         // If there are more types, add a comma.
         if ((index + 1) != json.types.length) {
-            pokemonType.innerHTML += ", "
+            pokemonType.innerHTML += "/"
         }
     }
 
