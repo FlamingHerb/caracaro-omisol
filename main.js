@@ -13,6 +13,14 @@ const pokemonBackImage = document.getElementById("pokemonback");
 const pokemonName = document.getElementById("pokemonname");
 const pokemonType = document.getElementById("pokemontype");
 const pokemonAbilitiesList = document.getElementById("pokemonabiltieslist");
+
+const pokemonHPName = document.getElementById("pokestat1");
+const pokemonATKName = document.getElementById("pokestat2");
+const pokemonDEFName = document.getElementById("pokestat3");
+const pokemonSPATKName = document.getElementById("pokestat4");
+const pokemonSPDEFName = document.getElementById("pokestat5");
+const pokemonSPDName = document.getElementById("pokestat6");
+
 const pokemonHP = document.getElementById("pokemonhp");
 const pokemonATK = document.getElementById("pokemonatk");
 const pokemonDEF = document.getElementById("pokemondef");
@@ -131,7 +139,16 @@ function setPokemonData(json){
         }
     }
 
-    // Set remaining base stats.
+    // Set remaining base stats and names..
+
+    pokemonHPName.innerHTML     = json.stats[0].stat.name.toUpperCase();
+    pokemonATKName.innerHTML    = sentenceCase(json.stats[1].stat.name);
+    pokemonDEFName.innerHTML    = sentenceCase(json.stats[2].stat.name);
+    pokemonSPATKName.innerHTML  = sentenceCase(json.stats[3].stat.name);
+    pokemonSPDEFName.innerHTML  = sentenceCase(json.stats[4].stat.name);
+    pokemonSPDName.innerHTML    = sentenceCase(json.stats[5].stat.name);
+
+    
     pokemonHP.innerHTML         = json.stats[0].base_stat;
     pokemonATK.innerHTML        = json.stats[1].base_stat;
     pokemonDEF.innerHTML        = json.stats[2].base_stat;
