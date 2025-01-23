@@ -140,7 +140,6 @@ function setPokemonData(json){
     }
 
     // Set remaining base stats and names..
-
     pokemonHPName.innerHTML     = json.stats[0].stat.name.toUpperCase();
     pokemonATKName.innerHTML    = sentenceCase(json.stats[1].stat.name);
     pokemonDEFName.innerHTML    = sentenceCase(json.stats[2].stat.name);
