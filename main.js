@@ -82,6 +82,7 @@ function setPokemonData(json){
     pokemonAbilitiesList.innerHTML = "";
     pokemonType.innerHTML = "";
 
+    // Set image and name.
     pokemonFrontImage.src       = json.sprites.front_default;
     pokemonBackImage.src        = json.sprites.back_default;
     pokemonName.innerHTML       = json.name[0].toUpperCase() + json.name.substring(1);
