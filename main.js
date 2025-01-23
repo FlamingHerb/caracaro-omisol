@@ -31,6 +31,18 @@ searchBar.addEventListener("keydown", function (e) {
 });
 
 /**
+ * The entire string is converted to a Sentence Case format. Also removes dashes.
+ * @param {string} s - The String that will be Sentence Cased.
+ */
+function sentenceCase(s) {
+    return s.replace("-", " ")
+            .toLowerCase()
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+}
+
+/**
  * Requests for data from the API and sends them to setPokemonData().
  * @param {string} pokeName - The requested name of the Pokemon.
  */
@@ -85,14 +97,14 @@ function setPokemonData(json){
     // Set image and name.
     pokemonFrontImage.src       = json.sprites.front_default;
     pokemonBackImage.src        = json.sprites.back_default;
-    pokemonName.innerHTML       = json.name[0].toUpperCase() + json.name.substring(1);
+    pokemonName.innerHTML       = sentenceCase(json.name);
 
     // Iterate over types.
     for (let index = 0;  index < json.types.length; index++) {
         const typeName = json.types[index].type.name;
 
         // Title case the noun.
-        pokemonType.innerHTML += typeName[0].toUpperCase() + typeName.substring(1);
+        pokemonType.innerHTML += sentenceCase(typeName);
 
         // If there are more types, add a comma.
         if ((index + 1) != json.types.length) {
@@ -104,8 +116,9 @@ function setPokemonData(json){
     for (let index = 0;  index < json.abilities.length; index++) {
         const abilityName = json.abilities[index].ability.name;
 
-        // Title case the noun.
-        pokemonAbilitiesList.innerHTML += abilityName[0].toUpperCase() + abilityName.substring(1);
+        // Title case the noun. titleCase(s)
+        //pokemonAbilitiesList.innerHTML += abilityName[0].toUpperCase() + abilityName.substring(1);
+        pokemonAbilitiesList.innerHTML += sentenceCase(abilityName);
 
         // Check if hidden. If hidden, then print the following.
         if (json.abilities[index].is_hidden){
