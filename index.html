@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico" />
+    <title>Pokemon Finder</title>
+    
+    <!-- CSS -->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+
+    <!-- JS -->
+</head>
+<body>
+    <div class="container">
+        <input type="text" placeholder="Enter the Pokémon's Name" id="pokeInput">
+        <div id="pokemonimages">
+            <img id="pokemonfront" src="" />
+            <p>Front</p>
+            <img id="pokemonback" src="" />
+            <p>Back</p>
+        </div>
+        <div id="poketable">
+            <table>
+                <tr>
+                    <th id="pokemonname" colspan="3"></th>
+                </tr>
+                <tr>
+                    <th>Types</th>
+                    <td id="pokemontype" colspan="2"></td>
+                </tr>
+                <tr>
+                    <th>Abilities</th>
+                    <td colspan="2" id="pokemonabiltieslist"></td>
+                </tr>
+                <tr>
+                    <th rowspan="6">Base Stats</th>
+                    <th>HP</th>
+                    <td id="pokemonhp"></td>
+                </tr>
+                <tr>
+                    <th>ATK</th>
+                    <td id="pokemonatk"></td>
+                </tr>
+                <tr>
+                    <th>DEF</th>
+                    <td id="pokemondef"></td>
+                </tr>
+                <tr>
+                    <th>SP ATK</th>
+                    <td id="pokemonspatk"></td>
+                </tr>
+                <tr>
+                    <th>SP DEF</th>
+                    <td id="pokemonspdef"></td>
+                </tr>
+                <tr>
+                    <th>SPD</th>
+                    <td id="pokemonspd"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
