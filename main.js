@@ -70,7 +70,7 @@ async function getPokemonData(pokeName) {
         const json = await response.json();
         
         // JSON Obtained, proceed to change.
-        console.log(json["name"]);
+        console.log(json);
 
         // Change table data.
         setPokemonData(json);
