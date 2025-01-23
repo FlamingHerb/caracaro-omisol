@@ -33,8 +33,8 @@ td {
     margin: auto;
     text-align: center;
 
-    flex: 0 0 100%; /* flex-grow, flex-shrink, flex-basis */
-
+    flex: 0 0 100%; 
+    
     margin-bottom: 50px;
 }
 

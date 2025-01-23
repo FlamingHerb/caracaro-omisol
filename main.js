@@ -148,7 +148,6 @@ function setPokemonData(json){
     pokemonSPDEFName.innerHTML  = sentenceCase(json.stats[4].stat.name);
     pokemonSPDName.innerHTML    = sentenceCase(json.stats[5].stat.name);
 
-    
     pokemonHP.innerHTML         = json.stats[0].base_stat;
     pokemonATK.innerHTML        = json.stats[1].base_stat;
     pokemonDEF.innerHTML        = json.stats[2].base_stat;
